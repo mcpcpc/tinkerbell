@@ -26,14 +26,26 @@ FAIRY_LIGHT_N = const(100)
 
 
 def get_animation_group(*args):
+    """
+    Create and return animation group.
+    """
+
     return AnimationGroup(*args, sync=False)
 
 
 def get_animation_sequence(*members):
+    """
+    Create and return animation sequence.
+    """
+
     return AnimationSequence(*members)
 
 
 def get_pixels(pin):
+    """
+    Create and return NeoPixel object.
+    """
+
     return NeoPixel(
         pin,
         3,
@@ -43,6 +55,10 @@ def get_pixels(pin):
 
 
 def get_comet(pixels: NeoPixel):
+    """
+    Create and return Comet object.
+    """
+
     return Comet(
         pixels,
         speed=0.01,
