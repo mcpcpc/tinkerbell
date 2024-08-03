@@ -64,7 +64,8 @@ def get_comet(pixels: NeoPixel):
         speed=0.01,
         color=RED,
         tail_length=10,
-        bounce=True,
+        bounce=False,
+        reverse=True,
     )
 
 
