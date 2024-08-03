@@ -23,6 +23,16 @@ from board import NEOPIXEL7
 from neopixel import NeoPixel
 
 FAIRY_LIGHT_N = const(100)
+PIXELS = [
+    NEOPIXEL0,
+    NEOPIXEL1,
+    NEOPIXEL2,
+    NEOPIXEL3,
+    NEOPIXEL4,
+    NEOPIXEL5,
+    NEOPIXEL6,
+    NEOPIXEL7,
+]
 
 
 def get_animation_group(*args):
@@ -63,9 +73,9 @@ def get_comet(pixels: NeoPixel):
         pixels,
         speed=0.01,
         color=RED,
-        tail_length=10,
-        bounce=False,
+        tail_length=5,
         reverse=True,
+        ring=True,
     )
 
 
