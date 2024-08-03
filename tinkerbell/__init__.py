@@ -22,7 +22,7 @@ from board import NEOPIXEL6
 from board import NEOPIXEL7
 from neopixel import NeoPixel
 
-FAIRY_LIGHT_N = const(100)
+FAIRY_LIGHT_N = const(3)
 PIXELS = [
     NEOPIXEL0,
     NEOPIXEL1,
@@ -58,7 +58,7 @@ def get_pixels(pin):
 
     return NeoPixel(
         pin,
-        3,
+        FAIRY_LIGHT_N,
         brightness=0.2,
         auto_write=False,
     )
@@ -80,10 +80,14 @@ def get_comet(pixels: NeoPixel):
 
 
 def main():
-    pixels0 = get_pixels(NEOPIXEL0)
-    effect0 = get_comet(pixels0)
-    group0 = get_animation_group(effect0)
-    sequence = get_animation_sequence(group0)
+    #pixels0 = get_pixels(NEOPIXEL0)
+    #effect0 = get_comet(pixels0)
+    #group0 = get_animation_group(effect0)
+    #sequence = get_animation_sequence(group0)
+    pixels = list(map(get_pixels, PIXELS))
+    effects = list(map(get_comet, pixels))
+    group = get_animation_group(*effects)
+    sequence = get_animation_sequence(group)
     while True:
         sequence.animate()
 
