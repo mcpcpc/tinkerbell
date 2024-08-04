@@ -21,6 +21,7 @@ from board import NEOPIXEL5
 from board import NEOPIXEL6
 from board import NEOPIXEL7
 from neopixel import NeoPixel
+from random import random
 
 FAIRY_LIGHT_N = const(3)
 PIXELS = [
@@ -71,8 +72,8 @@ def get_comet(pixels: NeoPixel):
 
     return Comet(
         pixels,
-        speed=0.01,
-        #speed=random(),
+        #speed=0.01,
+        speed=random(),
         color=RED,
         tail_length=5,
         reverse=True,
