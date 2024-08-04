@@ -80,10 +80,6 @@ def get_comet(pixels: NeoPixel):
 
 
 def main():
-    #pixels0 = get_pixels(NEOPIXEL0)
-    #effect0 = get_comet(pixels0)
-    #group0 = get_animation_group(effect0)
-    #sequence = get_animation_sequence(group0)
     pixels = list(map(get_pixels, PIXELS))
     effects = list(map(get_comet, pixels))
     group = get_animation_group(*effects)
