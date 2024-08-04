@@ -23,7 +23,7 @@ from board import NEOPIXEL7
 from neopixel import NeoPixel
 from random import random
 
-FAIRY_LIGHT_N = const(3)
+PER_STRAND_N = const(3)
 PIXELS = [
     NEOPIXEL0,
     NEOPIXEL1,
@@ -59,7 +59,7 @@ def get_pixels(pin):
 
     return NeoPixel(
         pin,
-        FAIRY_LIGHT_N,
+        PER_STRAND_N,
         brightness=0.2,
         auto_write=False,
     )
