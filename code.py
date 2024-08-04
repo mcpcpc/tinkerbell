@@ -22,6 +22,7 @@ from board import NEOPIXEL6
 from board import NEOPIXEL7
 from neopixel import NeoPixel
 from random import random
+from random import randint
 
 PER_STRAND_N = const(3)
 PIXELS = [
@@ -70,12 +71,15 @@ def get_comet(pixels: NeoPixel):
     Create and return Comet object.
     """
 
+    speed = random()
+    length = randint(3, 7)
     return Comet(
         pixels,
         #speed=0.01,
-        speed=random(),
+        speed=speed,
         color=RED,
-        tail_length=5,
+        #tail_length=5,
+        tail_length=length,
         reverse=True,
         ring=True,
     )
