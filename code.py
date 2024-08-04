@@ -71,7 +71,8 @@ def get_comet(pixels: NeoPixel):
 
     return Comet(
         pixels,
-        speed=0.01,
+        #speed=0.01,
+        speed=random(),
         color=RED,
         tail_length=5,
         reverse=True,
