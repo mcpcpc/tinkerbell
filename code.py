@@ -25,16 +25,15 @@ from board import NEOPIXEL6
 from board import NEOPIXEL7
 from neopixel import NeoPixel
 
-PER_STRAND_N = const(50)
 PIXELS = [
-    NEOPIXEL0,
-    NEOPIXEL1,
-    NEOPIXEL2,
-    NEOPIXEL3,
-    NEOPIXEL4,
-    NEOPIXEL5,
-    NEOPIXEL6,
-    NEOPIXEL7,
+    (NEOPIXEL0, 50),
+    (NEOPIXEL1, 50),
+    (NEOPIXEL2, 50),
+    (NEOPIXEL3, 50),
+    (NEOPIXEL4, 50),
+    (NEOPIXEL5, 50),
+    (NEOPIXEL6, 50),
+    (NEOPIXEL7, 50),
 ]
 
 
@@ -54,14 +53,14 @@ def get_animation_sequence(*members):
     return AnimationSequence(*members)
 
 
-def get_pixels(pin):
+def get_pixels(pin, n):
     """
     Create and return NeoPixel object.
     """
 
     return NeoPixel(
         pin,
-        PER_STRAND_N,
+        n,
         brightness=0.5,
         auto_write=False,
     )
@@ -84,7 +83,7 @@ def get_comet(pixels: NeoPixel):
 
 
 def main():
-    pixels = list(map(get_pixels, PIXELS))
+    pixels = list(map(lambda p; get_pixels(*p), PIXELS))
     effects = list(map(get_comet, pixels))
     group = get_animation_group(*effects)
     sequence = get_animation_sequence(group)
