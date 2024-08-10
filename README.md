@@ -6,6 +6,7 @@ An experiment in Christmas tree lighting to create a "pixie dust" effect using m
 * [3-pin JST SM Plug](https://www.adafruit.com/product/1663) - Qty 8
 * [Adafruit Feather RP2040 SCORPIO](https://www.adafruit.com/product/5650) - Qty 1
 * [Machine-Mount Corrosion-Resistant Washdown Enclosure](https://www.mcmaster.com/product/1037N112) - Qty 1
+* [5V 4A Switching Power Supply](https://www.adafruit.com/product/1466) - Qty 1
 
 ## Assembly
 ### Software
