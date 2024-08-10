@@ -2,7 +2,7 @@
 An experiment in Christmas tree lighting to create a "pixie dust" effect using multiple NeoPixel strands.
 
 ## Materials
-* [Adafruit Soft Flexible Wire NeoPixel Strand](https://www.adafruit.com/product/4560) - Qty 8
+* [Soft Flexible Wire NeoPixel Strand](https://www.adafruit.com/product/4560) - Qty 8
 * [3-pin JST SM Plug](https://www.adafruit.com/product/1663) - Qty 8
 * [Adafruit Feather RP2040 SCORPIO](https://www.adafruit.com/product/5650) - Qty 1
 * [Machine-Mount Corrosion-Resistant Washdown Enclosure](https://www.mcmaster.com/product/1037N112) - Qty 1
