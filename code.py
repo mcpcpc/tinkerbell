@@ -8,6 +8,9 @@ SPDX-License-Identifier: BSD-3-Clause
 Tinkerbell NeoPixel animation effect.
 """
 
+from random import random
+from random import randint
+
 from adafruit_led_animation.animation.comet import Comet
 from adafruit_led_animation.color import RED
 from adafruit_led_animation.group import AnimationGroup
@@ -21,8 +24,6 @@ from board import NEOPIXEL5
 from board import NEOPIXEL6
 from board import NEOPIXEL7
 from neopixel import NeoPixel
-from random import random
-from random import randint
 
 PER_STRAND_N = const(50)
 PIXELS = [
