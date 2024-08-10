@@ -1,8 +1,7 @@
 # Tinkerbell
-
 ![Tinker Bell](https://upload.wikimedia.org/wikipedia/commons/4/42/Tinkclose-1-.jpg)
 
-An experiment in Christmas tree lighting to recreate a "pixie dust" effect using multiple NeoPixel strands.
+An experiment in Christmas tree lighting to create a "pixie dust" effect using multiple NeoPixel strands.
 
 ## Materials
 
