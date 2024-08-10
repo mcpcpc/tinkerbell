@@ -53,7 +53,7 @@ def get_animation_sequence(*members):
     return AnimationSequence(*members)
 
 
-def get_pixels(pin, n):
+def get_pixels(pin, n: int):
     """
     Create and return NeoPixel object.
     """
