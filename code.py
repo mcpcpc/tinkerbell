@@ -25,7 +25,7 @@ from board import NEOPIXEL6
 from board import NEOPIXEL7
 from neopixel import NeoPixel
 
-PIXELS = [
+LOCALE = [
     (NEOPIXEL0, 50),
     (NEOPIXEL1, 50),
     (NEOPIXEL2, 50),
@@ -66,7 +66,7 @@ def get_pixels(pin, n):
     )
 
 
-def get_comet(pixels: NeoPixel):
+def get_comet(pixels: NeoPixel, color: tuple):
     """
     Create and return Comet object.
     """
@@ -76,15 +76,15 @@ def get_comet(pixels: NeoPixel):
     return Comet(
         pixels,
         speed=speed,
-        color=RED,
+        color=color,
         tail_length=length,
         reverse=True,
     )
 
 
 def main():
-    pixels = list(map(lambda p; get_pixels(*p), PIXELS))
-    effects = list(map(get_comet, pixels))
+    pixels = list(map(lambda l: get_pixels(*l), LOCALE))
+    effects = list(map(lambda p: get_comet(p, RED), pixels))
     group = get_animation_group(*effects)
     sequence = get_animation_sequence(group)
     while True:
