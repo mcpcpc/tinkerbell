@@ -24,7 +24,7 @@ from neopixel import NeoPixel
 from random import random
 from random import randint
 
-PER_STRAND_N = const(3)
+PER_STRAND_N = const(50)
 PIXELS = [
     NEOPIXEL0,
     NEOPIXEL1,
@@ -61,7 +61,7 @@ def get_pixels(pin):
     return NeoPixel(
         pin,
         PER_STRAND_N,
-        brightness=0.2,
+        brightness=0.5,
         auto_write=False,
     )
 
@@ -75,13 +75,10 @@ def get_comet(pixels: NeoPixel):
     length = randint(3, 7)
     return Comet(
         pixels,
-        #speed=0.01,
         speed=speed,
         color=RED,
-        #tail_length=5,
         tail_length=length,
         reverse=True,
-        ring=True,
     )
 
 
