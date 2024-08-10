@@ -9,7 +9,8 @@ An experiment in Christmas tree lighting to create a "pixie dust" effect using m
 * [Adafruit Feather RP2040 SCORPIO](https://www.adafruit.com/product/5650) (Qty 1)
 * [Machine-Mount Corrosion-Resistant Washdown Enclosure](https://www.mcmaster.com/product/1037N112) (Qty 1)
 
-## Setup
+## Assembly
+### Software
 The following are high-level steps to get the microcontroller up and running:
 
 1. Download and install the latest version of CircuitPython ([here](https://circuitpython.org/board/adafruit_feather_rp2040_scorpio/)) to the Adafruit Feather RP2040 SCORPIO.
