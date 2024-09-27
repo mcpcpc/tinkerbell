@@ -12,7 +12,7 @@ from random import random
 from random import randint
 
 from adafruit_led_animation.animation.comet import Comet
-from adafruit_led_animation.color import RED
+#from adafruit_led_animation.color import RED
 from adafruit_led_animation.group import AnimationGroup
 from adafruit_led_animation.sequence import AnimationSequence
 from board import NEOPIXEL0
@@ -35,7 +35,7 @@ LOCALE = [
     (NEOPIXEL6, 50),
     (NEOPIXEL7, 50),
 ]
-
+COLOR_RGB = (200, 32, 32)
 
 def get_animation_group(*args):
     """
@@ -84,7 +84,7 @@ def get_comet(pixels: NeoPixel, color: tuple):
 
 def main():
     pixels = list(map(lambda l: get_pixels(*l), LOCALE))
-    effects = list(map(lambda p: get_comet(p, RED), pixels))
+    effects = list(map(lambda p: get_comet(p, COLOR_RGB), pixels))
     group = get_animation_group(*effects)
     sequence = get_animation_sequence(group)
     while True:
