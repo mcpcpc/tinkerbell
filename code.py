@@ -24,6 +24,7 @@ from board import NEOPIXEL5
 from board import NEOPIXEL6
 from board import NEOPIXEL7
 from neopixel import NeoPixel
+#from neopixel import GRBW
 
 LOCALE = [
     (NEOPIXEL0, 50),
@@ -63,6 +64,7 @@ def get_pixels(pin, n: int):
         n,
         brightness=0.5,
         auto_write=False,
+        #pixel_order=GRBW,
     )
 
 
