@@ -36,7 +36,7 @@ LOCALE = [
     (NEOPIXEL6, 50),
     (NEOPIXEL7, 50),
 ]
-COLOR_GRB = (200, 32, 32)
+RGB = (200, 32, 32)
 
 def get_animation_group(*args):
     """
@@ -87,7 +87,7 @@ def get_comet(pixels: NeoPixel, color: tuple):
 
 def main():
     pixels = list(map(lambda l: get_pixels(*l), LOCALE))
-    effects = list(map(lambda p: get_comet(p, COLOR_GRB), pixels))
+    effects = list(map(lambda p: get_comet(p, RGB), pixels))
     group = get_animation_group(*effects)
     sequence = get_animation_sequence(group)
     while True:
