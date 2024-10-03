@@ -13,7 +13,6 @@ from random import randint
 from adafruit_led_animation.animation.comet import Comet
 from adafruit_led_animation.group import AnimationGroup
 from adafruit_led_animation.sequence import AnimationSequence
-from board import NEOPIXEL
 from board import NEOPIXEL0
 from board import NEOPIXEL1
 from board import NEOPIXEL2
