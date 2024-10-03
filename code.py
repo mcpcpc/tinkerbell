@@ -11,6 +11,7 @@ Tinkerbell NeoPixel animation effect.
 from random import randint
 
 from adafruit_led_animation.animation.comet import Comet
+from adafruit_led_animation.color import GOLD
 from adafruit_led_animation.group import AnimationGroup
 from adafruit_led_animation.sequence import AnimationSequence
 from board import NEOPIXEL0
@@ -34,7 +35,8 @@ LOCALE = [
     (NEOPIXEL6, 50),
     (NEOPIXEL7, 50),
 ]
-RGB = (32, 200, 32)
+#RGB = (32, 200, 32)
+RGB = GOLD
 
 
 def get_pixels(pin, n: int):
