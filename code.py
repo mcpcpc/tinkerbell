@@ -11,7 +11,6 @@ Tinkerbell NeoPixel animation effect.
 from random import randint
 
 from adafruit_led_animation.animation.comet import Comet
-from adafruit_led_animation.color import GOLD
 from adafruit_led_animation.group import AnimationGroup
 from adafruit_led_animation.sequence import AnimationSequence
 from board import NEOPIXEL0
@@ -23,7 +22,7 @@ from board import NEOPIXEL5
 from board import NEOPIXEL6
 from board import NEOPIXEL7
 from neopixel import NeoPixel
-from neopixel import GRBW
+from neopixel import RGB
 
 LOCALE = [
     (NEOPIXEL0, 50),
@@ -35,8 +34,7 @@ LOCALE = [
     (NEOPIXEL6, 50),
     (NEOPIXEL7, 50),
 ]
-#RGB = (32, 200, 32)
-RGB = GOLD
+COLOR = (255, 140, 0)
 
 
 def get_pixels(pin, n: int):
@@ -49,7 +47,7 @@ def get_pixels(pin, n: int):
         n,
         brightness=0.5,
         auto_write=False,
-        pixel_order=GRBW,
+        pixel_order=RGB,
     )
 
 
@@ -58,7 +56,7 @@ def get_comet(pixels: NeoPixel, color: tuple):
     Create and return Comet object.
     """
 
-    speed = randint(50, 100) / 100
+    speed = randint(15, 30) / 100
     length = randint(3, 7)
     return Comet(
         pixels,
@@ -71,12 +69,11 @@ def get_comet(pixels: NeoPixel, color: tuple):
 
 def main():
     pixels = list(map(lambda l: get_pixels(*l), LOCALE))
-    comet_effects = list(map(lambda p: get_comet(p, RGB), pixels))
-    comet_group = AnimationGroup(*comet_effects, sync=False)
-    sequence = AnimationSequence(comet_group)
+    comets = list(map(lambda p: get_comet(p, COLOR), pixels))
+    group = AnimationGroup(*comets, sync=False)
+    sequence = AnimationSequence(group)
     while True:
         sequence.animate()
-
 
 if __name__ == "__main__":
     main()
