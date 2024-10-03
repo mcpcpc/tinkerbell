@@ -56,7 +56,7 @@ def get_comet(pixels: NeoPixel, color: tuple):
     Create and return Comet object.
     """
 
-    speed = randint(15, 30) / 100
+    speed = randint(15, 25) / 100
     length = randint(3, 7)
     return Comet(
         pixels,
@@ -67,13 +67,19 @@ def get_comet(pixels: NeoPixel, color: tuple):
     )
 
 
-def main():
+def main(color: tuple = COLOR):
     pixels = list(map(lambda l: get_pixels(*l), LOCALE))
-    comets = list(map(lambda p: get_comet(p, COLOR), pixels))
+    comets = list(map(lambda p: get_comet(p, color), pixels))
     group = AnimationGroup(*comets, sync=False)
     sequence = AnimationSequence(group)
-    while True:
-        sequence.animate()
+    try:
+        print("starting...")
+        while True:
+            sequence.animate()
+    except KeyboardInterrupt:
+        print("cleanup...")
+        list(map(lambda p: p.deinit(), pixels))
+
 
 if __name__ == "__main__":
     main()
