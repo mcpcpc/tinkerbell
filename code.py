@@ -8,11 +8,9 @@ SPDX-License-Identifier: BSD-3-Clause
 Tinkerbell NeoPixel animation effect.
 """
 
-#from random import random
 from random import randint
 
 from adafruit_led_animation.animation.comet import Comet
-#from adafruit_led_animation.color import RED
 from adafruit_led_animation.group import AnimationGroup
 from adafruit_led_animation.sequence import AnimationSequence
 from board import NEOPIXEL0
@@ -38,21 +36,6 @@ LOCALE = [
 ]
 RGB = (200, 32, 32)
 
-def get_animation_group(*args):
-    """
-    Create and return animation group.
-    """
-
-    return AnimationGroup(*args, sync=False)
-
-
-def get_animation_sequence(*members):
-    """
-    Create and return animation sequence.
-    """
-
-    return AnimationSequence(*members)
-
 
 def get_pixels(pin, n: int):
     """
@@ -73,7 +56,6 @@ def get_comet(pixels: NeoPixel, color: tuple):
     Create and return Comet object.
     """
 
-    #speed = random()
     speed = randint(50, 100) / 100
     length = randint(3, 7)
     return Comet(
@@ -88,8 +70,8 @@ def get_comet(pixels: NeoPixel, color: tuple):
 def main():
     pixels = list(map(lambda l: get_pixels(*l), LOCALE))
     effects = list(map(lambda p: get_comet(p, RGB), pixels))
-    group = get_animation_group(*effects)
-    sequence = get_animation_sequence(group)
+    group = AnimationGroup(*effects, sync=False)
+    sequence = AnimationSequence(*group)
     while True:
         sequence.animate()
 
