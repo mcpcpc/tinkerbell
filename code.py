@@ -67,8 +67,8 @@ def get_comet(pixels: NeoPixel, color: tuple):
     )
 
 
-def main(color: tuple = COLOR):
-    pixels = list(map(lambda l: get_pixels(*l), LOCALE))
+def main(color: tuple = COLOR, locale: list = LOCALE):
+    pixels = list(map(lambda l: get_pixels(*l), locale))
     comets = list(map(lambda p: get_comet(p, color), pixels))
     group = AnimationGroup(*comets, sync=False)
     sequence = AnimationSequence(group)
