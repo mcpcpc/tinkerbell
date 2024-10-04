@@ -34,7 +34,7 @@ LOCALE = [
     (NEOPIXEL6, 50),
     (NEOPIXEL7, 50),
 ]
-COLOR = (255, 140, 0)
+COLOR = (255, 80, 0)
 
 
 def get_pixels(pin, n: int):
